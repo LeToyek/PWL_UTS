@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="height: 100vh">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="height: 100vh;overflow: hidden">
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
         <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
@@ -33,7 +33,7 @@
         </div>
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2" style="height: 80vh;  justify-content: space-between; display: flex; flex-direction: column">
+        <nav class="mt-2" style="height: 70vh;  justify-content: space-between; display: flex; flex-direction: column">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false" style="justify-content: space-between">
                 <!-- Add icons to the links using the .nav-icon class
