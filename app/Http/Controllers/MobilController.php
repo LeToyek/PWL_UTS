@@ -48,7 +48,7 @@ class MobilController extends Controller
             'warna'=>'required|string|max:50',
             'jml_penumpang'=>'required|string',
             'harga'=>'required|int',
-            'qty'=>'required|int',
+            'qty'=>'required|int'
 
             
         ]);
@@ -61,7 +61,7 @@ class MobilController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Mobil  $Mobil
+     * @param  \App\Models\Mobil  $mobil
      * @return \Illuminate\Http\Response
      */
     public function show(Mobil $mobil)
@@ -72,51 +72,50 @@ class MobilController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Mobil  $Mobil
+     * @param  \App\Models\Mobil  $mobil
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $Mobil = Mobil::find($id);
+        $mobil = Mobil::find($id);
         return view('mobil.create_mobil')
-        ->with('mhs', $Mobil)
-        ->with('url_form', url('/Mobil/'. $id));
+        ->with('mhs', $mobil)
+        ->with('url_form', url('/mobil/'. $id));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Mobil  $Mobil
+     * @param  \App\Models\Mobil  $mobil
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nim' => 'required|string|max:10|unique:Mobil,nim,'.$id,
-            'nama' =>'required|string|max:50',
-            'jk' => 'required|in:l,p',
-            'tempat_lahir' => 'required|string|max:50',
-            'tanggal_lahir' => 'required|date',
-            'alamat' => 'required|string',
-            'hp' => 'required|digits_between:6,15',
+            'merk'=>'required|string|max:50,'.$id,
+            'tipe'=>'required|string|max:50',
+            'warna'=>'required|string|max:50',
+            'jml_penumpang'=>'required|string',
+            'harga'=>'required|int',
+            'qty'=>'required|int'
         ]);
         
         $data = Mobil::where('id', '=', $id)->update($request->except(['_token', '_method']));
-        return redirect('Mobil')
+        return redirect('mobil')
             ->with('success', 'Mobil Berhasil Diedit');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Mobil  $Mobil
+     * @param  \App\Models\Mobil  $mobil
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         Mobil::where('id', '=', $id)->delete();
-        return redirect('Mobil')
+        return redirect('mobil')
         ->with('success','Mobil Berhasil Dihapus');
     }
 }
