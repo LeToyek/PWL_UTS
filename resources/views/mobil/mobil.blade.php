@@ -69,20 +69,20 @@
                                 @foreach ($m as $i => $mb)
                                     <tr>
                                         <td>{{ ++$i }}</td>
-                                        <td>{{ $m->merk }}</td>
-                                        <td>{{ $m->tipe }}</td>
-                                        <td>{{ $m->warna }}</td>
-                                        <td>{{ $m->jml_penumpang }}</td>
-                                        <td>{{ $m->harga }}</td>
-                                        <td>{{ $m->qty }}</td>
+                                        <td>{{ $mb->merk }}</td>
+                                        <td>{{ $mb->tipe }}</td>
+                                        <td>{{ $mb->warna }}</td>
+                                        <td>{{ $mb->jml_penumpang }}</td>
+                                        <td>{{ $mb->harga }}</td>
+                                        <td>{{ $mb->qty }}</td>
                                         <td >
                                             <!-- Bikin tombol edit dan delete -->
                                             <div class="row justify-content-center">
                                                 
-                                                <a href="{{ url('/mobils/' . $m->id . '/edit') }}" 
+                                                <a href="{{ url('/mobils/' . $mb->id . '/edit') }}" 
                                                     class="btn btn-sm btn-warning mr-2">Edit</a>
                                             
-                                                <form method="POST" action="{{ url('/mobils/' . $m->id) }}">
+                                                <form method="POST" action="{{ url('/mobils/' . $mb->id) }}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-sm btn-danger">Hapus</button>

@@ -79,7 +79,7 @@ class MobilController extends Controller
     {
         $mobil = Mobil::find($id);
         return view('mobil.create_mobil')
-        ->with('mhs', $mobil)
+        ->with('m', $mobil)
         ->with('url_form', url('/mobil/'. $id));
     }
 
