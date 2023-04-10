@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+    
 Auth::routes();
-
+Route::get('/logout', [LoginController::class, 'logout']);
 Route::middleware(['auth'])->group(function (){
     Route::get('/', function () {
         return view('welcome');
