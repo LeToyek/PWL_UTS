@@ -73,6 +73,8 @@
                                         <td>{{ $m->tipe }}</td>
                                         <td>{{ $m->warna }}</td>
                                         <td>{{ $m->jml_penumpang }}</td>
+                                        <td>{{ $m->harga }}</td>
+                                        <td>{{ $m->qty }}</td>
                                         <td >
                                             <!-- Bikin tombol edit dan delete -->
                                             <div class="row justify-content-center">
