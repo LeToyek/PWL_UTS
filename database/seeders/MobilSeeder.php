@@ -16,7 +16,7 @@ class MobilSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('mobils')->insert(
+        DB::table('mobil')->insert(
             [
                 [
                     "merk" => "Sedan",
