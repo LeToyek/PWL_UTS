@@ -13,7 +13,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Mata Kuliah</h1>
+                        <h1>Mobil</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -49,7 +49,7 @@
                 </div>
                 <div class="card-body">
 
-                    <a href="{{ url('mobils/create') }}" class="btn btn-sm btn-success my-2">Tambah Data</a>
+                    <a href="{{ url('mobil/create') }}" class="btn btn-sm btn-success my-2">Tambah Data</a>
 
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -79,10 +79,10 @@
                                             <!-- Bikin tombol edit dan delete -->
                                             <div class="row justify-content-center">
                                                 
-                                                <a href="{{ url('/mobils/' . $mb->id . '/edit') }}" 
+                                                <a href="{{ url('/mobil/' . $mb->id . '/edit') }}" 
                                                     class="btn btn-sm btn-warning mr-2">Edit</a>
                                             
-                                                <form method="POST" action="{{ url('/mobils/' . $mb->id) }}">
+                                                <form method="POST" action="{{ url('/mobil/' . $mb->id) }}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
