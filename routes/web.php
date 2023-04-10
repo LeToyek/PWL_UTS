@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\MobilController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-    
+
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::middleware(['auth'])->group(function (){
     Route::get('/', function () {
         return view('welcome');
     });
+    Route::resource("/mobil",MobilController::class);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
 
