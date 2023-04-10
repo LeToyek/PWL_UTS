@@ -28,9 +28,9 @@
         <!-- Main content -->
         <section class="content">
 
-            @if (session()->has("success"))
+            @if (session()->has('success'))
                 <div class="alert alert-success">
-                    {{ session("success")}}
+                    {{ session('success') }}
                 </div>
             @endif
             <!-- Default box -->
@@ -42,15 +42,24 @@
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>
                         </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
                 </div>
                 <div class="card-body">
-
-                    <a href="{{ url('mobils/create') }}" class="btn btn-sm btn-success my-2">Tambah Data</a>
-
+                    <div class="row d-flex justify-between" style="width: 100%; justify-content: space-between; align-items: center; margin: 0">
+                        <a href="{{ url('mobil/create') }}" class="btn btn-sm btn-success my-2">Tambah Data</a>
+                        <form action="/mobil" class="col-md-4" style="padding: 0">
+                            @csrf
+                            <div class="input-group input-group-sm ">
+                                <input type="text" name="search" class="form-control input-sm " placeholder="Cari Mobil">
+                                <button class="input-group-text input-sm" id="basic-addon2" type="submit">
+                                    <i class="fa fa-search" style="font-size:16px"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -75,19 +84,19 @@
                                         <td>{{ $mb->jml_penumpang }}</td>
                                         <td>{{ $mb->harga }}</td>
                                         <td>{{ $mb->qty }}</td>
-                                        <td >
+                                        <td>
                                             <!-- Bikin tombol edit dan delete -->
                                             <div class="row justify-content-center">
-                                                
-                                                <a href="{{ url('/mobils/' . $mb->id . '/edit') }}" 
+
+                                                <a href="{{ url('/mobil/' . $mb->id . '/edit') }}"
                                                     class="btn btn-sm btn-warning mr-2">Edit</a>
-                                            
-                                                <form method="POST" action="{{ url('/mobils/' . $mb->id) }}">
+
+                                                <form method="POST" action="{{ url('/mobil/' . $mb->id) }}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                                                 </form>
-                                            </div>                                            
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -98,6 +107,9 @@
                             @endif
                         </tbody>
                     </table>
+                    <div class="mt-4" style="display: flex; justify-content: center; flex-direction: column-reverse">
+                        {{ $m->links() }}
+                    </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">

@@ -14,7 +14,7 @@
                 <img src="{{ asset('assets/dist/img/laila.jpg') }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Lailatul Badriyah</a>
+                <a href="#" class="d-block">MaulaCar</a>
             </div>
         </div>
 
@@ -38,10 +38,10 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="/mobi" class="nav-link {{ $title == 'profile'? 'active' : '' }}"">
-                        <i class="nav-icon fas fa-user"></i>
+                    <a href="/mobil" class="nav-link {{ $title == 'mobil'? 'active' : '' }}"">
+                        <i class="nav-icon fas fa-car-side"></i>
                         <p>
-                            Profile
+                            Mobil
                             {{-- <span class="right badge badge-danger">New</span> --}}
                         </p>
                     </a>
