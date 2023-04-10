@@ -49,7 +49,7 @@
                         {!! isset($m) ? method_field('PUT') : '' !!}
 
                         <div class="form-group">
-                            <label>merk</label>
+                            <label>Merk Mobil</label>
                             <input class="form-control @error('merk') is-invalid @enderror"
                                 value="{{ isset($m) ? $m->merk : old('merk') }}" name="merk" type="text" />
                             @error('merk')

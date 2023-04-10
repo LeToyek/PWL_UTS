@@ -19,32 +19,32 @@ class MobilSeeder extends Seeder
         DB::table('mobil')->insert(
             [
                 [
-                    "merk" => "Sedan",
-                    "tipe" => "Honda Civic RS",
+                    "merk" => "Honda Civic RS",
+                    "tipe" => "Sedan",
                     "warna" => "Merah",
                     "jml_penumpang" => 4,  
                     "harga" => 601000000,     
                     "qty" => 10          
                 ],
                 [
-                    "merk" => "Sedan",
-                    "tipe" => "Toyota Corolla Altis Hybrid",
+                    "merk" => "Toyota Corolla Altis Hybrid",
+                    "tipe" => "Sedan",
                     "warna" => "Hitam",
                     "jml_penumpang" => 4,  
                     "harga" => 594000000,     
                     "qty" => 15  
                 ],
                 [
-                    "merk" => "Jeep",
-                    "tipe" => "Jeep Compass Limited",
+                    "merk" => "Jeep Compass Limited",
+                    "tipe" => "Jeep",
                     "warna" => "Putih",
                     "jml_penumpang" => 6,  
                     "harga" => 826000000,     
                     "qty" => 10 
                 ],
                 [
-                    "merk" => "Hyundai",
-                    "tipe" => "Hyundai Grand i10",
+                    "merk" => "Hyundai Grand i10",
+                    "tipe" => "Hyundai",
                     "warna" => "Putih",
                     "jml_penumpang" => 6,  
                     "harga" => 184000000,     
@@ -52,12 +52,12 @@ class MobilSeeder extends Seeder
                 ]
                 ,
                 [
-                    "merk" => "Jeep",
-                    "tipe" => "Jeep Gladiator Rubicon",
+                    "merk" => "Jeep Gladiator Rubicon",
+                    "tipe" => "Jeep",
                     "warna" => "Hitam",
                     "jml_penumpang" => 4,  
                     "harga" => 2000000000,     
-                    "qty" => 10
+                    "qty" => 10 
                 ]
             ]
         );
