@@ -47,6 +47,15 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item" >
+                    <a href="/motor" class="nav-link {{ $title == 'motor' ? 'active' : '' }}"">
+                        <i class="nav-icon fas fa-motorcycle"></i>
+                        <p>
+                            Motor
+                            {{-- <span class="right badge badge-danger">New</span> --}}
+                        </p>
+                    </a>
+                </li>
 
 
 

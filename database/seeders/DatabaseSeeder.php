@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         $this->call([
-            MobilSeeder::class
+            MobilSeeder::class,
+            MotorSeeder::class,
         ]);
         \App\Models\User::factory()->create([
             'name' => "handoko",

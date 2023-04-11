@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\MotorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Route::middleware(['auth'])->group(function (){
         return view('welcome');
     });
     Route::resource("/mobil",MobilController::class);
+    Route::resource("/motor",MotorController::class);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
 
