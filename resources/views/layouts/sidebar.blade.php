@@ -48,7 +48,6 @@
                         </p>
                     </a>
                 </li>
-<<<<<<< HEAD
                 <li class="nav-item" >
                     <a href="/motor" class="nav-link {{ $title == 'motor' ? 'active' : '' }}"">
                         <i class="nav-icon fas fa-motorcycle"></i>
@@ -61,8 +60,6 @@
 
 
 
-=======
->>>>>>> 98f2d93558d3946b6323b352ae4febcfb77f228f
             </ul>
             <ul class="nav nav-pills nav-sidebar flex-column mb-3" data-widget="treeview" role="menu"
                 data-accordion="false" style="justify-content: space-between">
