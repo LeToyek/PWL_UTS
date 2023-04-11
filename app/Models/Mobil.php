@@ -17,4 +17,5 @@ class Mobil extends Model
         'harga',
         'qty'
     ];
+    
 }
