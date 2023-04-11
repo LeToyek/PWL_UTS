@@ -7,7 +7,7 @@
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar" >
+    <div class="sidebar">
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
@@ -33,11 +33,12 @@
         </div>
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2" style="height: 70vh;  justify-content: space-between; display: flex; flex-direction: column">
+        <nav class="mt-2"
+            style="height: 70vh;  justify-content: space-between; display: flex; flex-direction: column">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false" style="justify-content: space-between">
                 <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+                with font-awesome or any other icon font library -->
                 <li class="nav-item" style="margin-top: auto">
                     <a href="/mobil" class="nav-link {{ $title == 'mobil' ? 'active' : '' }}"">
                         <i class="nav-icon fas fa-car-side"></i>
@@ -47,13 +48,9 @@
                         </p>
                     </a>
                 </li>
-
-
-
             </ul>
             <ul class="nav nav-pills nav-sidebar flex-column mb-3" data-widget="treeview" role="menu"
                 data-accordion="false" style="justify-content: space-between">
-           
                 <li class="nav-item">
                     <a href="/logout" class="nav-link" style="color: white; background-color: #DC3545">
                         <i class="nav-icon 	fas fa-sign-out-alt"></i>
