@@ -15,11 +15,11 @@ class MobilController extends Controller
     public function index()
     {
         //
-        $m = Mobil::latest();
         if (request('search')) {
-            $m->where('merk','like','%'. request('search').'%');
+            $m = Mobil::where('merk','like','%'. request('search').'%')->paginate(5);
+        }else{
+            $m = Mobil::paginate(5);
         }
-        $m = $m->paginate(3);
         return view('mobil.mobil')
             ->with('m',$m);
         
