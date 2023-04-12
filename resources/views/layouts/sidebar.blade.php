@@ -40,6 +40,15 @@
                 <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
                 <li class="nav-item" style="margin-top: auto">
+                    <a href="/home" class="nav-link {{ $title == 'home' ? 'active' : '' }}"">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Home
+                            {{-- <span class="right badge badge-danger">New</span> --}}
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-top: auto">
                     <a href="/mobil" class="nav-link {{ $title == 'mobil' ? 'active' : '' }}"">
                         <i class="nav-icon fas fa-car-side"></i>
                         <p>
@@ -57,9 +66,6 @@
                         </p>
                     </a>
                 </li>
-
-
-
             </ul>
             <ul class="nav nav-pills nav-sidebar flex-column mb-3" data-widget="treeview" role="menu"
                 data-accordion="false" style="justify-content: space-between">
