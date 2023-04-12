@@ -75,9 +75,10 @@
                         </thead>
                         <tbody>
                             @if ($m->count() > 0)
-                                @foreach ($m as $i => $mb)
+                            @php $no = $m->firstItem(); @endphp
+                            @foreach ($m as $mb)
                                     <tr>
-                                        <td>{{ ++$i }}</td>
+                                        <td>{{ $no++ }}</td>
                                         <td>{{ $mb->merk }}</td>
                                         <td>{{ $mb->tipe }}</td>
                                         <td>{{ $mb->warna }}</td>
