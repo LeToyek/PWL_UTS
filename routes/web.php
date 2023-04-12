@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\MotorController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,8 @@ Route::middleware(['auth'])->group(function (){
     });
     Route::resource("/mobil",MobilController::class);
     Route::resource("/motor",MotorController::class);
+    Route::delete('/mobil/{id}', [MobilController::class, 'destroy'])->name('mobil.destroy');
+    Route::delete('/mobil/{id}', [MotorController::class, 'destroy'])->name('motor.destroy');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
 
