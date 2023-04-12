@@ -119,8 +119,12 @@ class MotorController extends Controller
      */
     public function destroy($id)
     {
-        Motor::where('id', '=', $id)->delete();
-        return redirect('motor')
-        ->with('success','Motor Berhasil Dihapus');
+        $motor = Motor::find($id);
+        if ($motor) {
+            $motor->delete();
+            return redirect()->route('motor.index')->with('success', 'Motor Berhasil Dihapus');
+        } else {
+            return redirect()->route('motor.index')->with('error', 'Motor Tidak Ditemukan');
+        }
     }
 }
