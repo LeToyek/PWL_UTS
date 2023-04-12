@@ -118,8 +118,12 @@ class MobilController extends Controller
      */
     public function destroy($id)
     {
-        Mobil::where('id', '=', $id)->delete();
-        return redirect('mobil')
-        ->with('success','Mobil Berhasil Dihapus');
+        $mobil = Mobil::find($id);
+        if ($mobil) {
+            $mobil->delete();
+            return redirect()->route('mobil.index')->with('success', 'Mobil Berhasil Dihapus');
+        } else {
+            return redirect()->route('mobil.index')->with('error', 'Mobil Tidak Ditemukan');
+        }
     }
 }
