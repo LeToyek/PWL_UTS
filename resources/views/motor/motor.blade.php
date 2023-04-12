@@ -53,7 +53,7 @@
                         <form action="/motor" class="col-md-4" style="padding: 0">
                             @csrf
                             <div class="input-group input-group-sm ">
-                                <input type="text" name="search" class="form-control input-sm " placeholder="Cari motor">
+                                <input type="text" name="search" class="form-control input-sm " placeholder="Cari Motor">
                                 <button class="input-group-text input-sm" id="basic-addon2" type="submit">
                                     <i class="fa fa-search" style="font-size:16px"></i>
                                 </button>
@@ -64,7 +64,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Merk motor</th>
+                                <th>Merk Motor</th>
                                 <th>Tipe</th>
                                 <th>Warna</th>
                                 <th>Kapasitas(cc)</th>
@@ -91,11 +91,31 @@
                                                 <a href="{{ url('/motor/' . $mb->id . '/edit') }}"
                                                     class="btn btn-sm btn-warning mr-2">Edit</a>
 
-                                                <form method="POST" action="{{ url('/motor/' . $mb->id) }}">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
-                                                </form>
+                                                    <form action="{{ route('motor.destroy', $mb->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="button" data-toggle="modal" data-target="#deleteModal" class="btn btn-sm btn-danger">Hapus</button>
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Hapus</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        Apakah anda yakin ingin menghapus data motor ini?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
                                             </div>
                                         </td>
                                     </tr>
